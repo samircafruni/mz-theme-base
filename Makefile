@@ -50,7 +50,6 @@ export-db:
 
 # Exibe ajuda
 help:
-	@echo "Comandos disponíveis:"
 	@echo " make up         - Inicia os containers"
 	@echo " make down       - Encerra os containers"
 	@echo " make shell      - Acessa o terminal do container WordPress"
