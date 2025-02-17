@@ -9,7 +9,7 @@
 !src/database/dump/
 !app/
 !app/plugins/
-!app/themes/
+!app/themes/mz-theme
 !app/uploads/
 
 # Não ignorar arquivos específicos

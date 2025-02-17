@@ -11,8 +11,8 @@ Este é um projeto de ambiente de desenvolvimento WordPress utilizando Docker, c
 │   └── uploads/       # Diretório wordpress de uploads
 ├── src/
 │   ├── conf/          # Arquivos de configuração (php.ini)
+│   │── backup/        # Diretório para arquivos de backup do banco
 │   ├── database/      # Dados persistentes do MySQL
-│   │   └── dump/      # Diretório para arquivos de backup do banco
 │   ├── docker/        # Arquivos de configuração Docker
 │   ├── logs/          # Logs do PHP, WordPress e Apache
 │   └── wordpress/     # Arquivos do WordPress
