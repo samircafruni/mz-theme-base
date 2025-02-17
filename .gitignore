@@ -1,0 +1,41 @@
+# Ignorar tudo
+*
+
+# Não ignorar diretórios específicos
+!src/
+!src/docker/
+!src/conf/
+!src/database/
+!src/database/dump/
+!app/
+!app/plugins/
+!app/themes/
+!app/uploads/
+
+# Não ignorar arquivos específicos
+!.gitignore
+!Makefile
+!README.md
+!src/docker/Dockerfile
+!src/docker/docker-compose.yml
+!src/conf/php.ini
+
+# Ignorar conteúdo dos diretórios específicos
+src/logs/*
+src/database/*
+src/wordpress/*
+
+# Ignorar temas padrão do WordPress
+app/themes/twenty*
+app/themes/index.php
+
+# Não ignorar .gitkeep
+!src/logs/.gitkeep
+!src/database/.gitkeep
+!src/database/dump/.gitkeep
+!src/wordpress/.gitkeep
+!app/themes/.gitkeep
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
