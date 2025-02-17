@@ -5,7 +5,6 @@ Este é um projeto de ambiente de desenvolvimento WordPress utilizando Docker, c
 ## Estrutura de Diretórios
 
 ```
-.
 ├── app/
 │   └── plugins/       # Diretório wordpress de plugins
 │   └── themes/        # Diretório WordPress de temas customizados
@@ -28,42 +27,6 @@ Este é um projeto de ambiente de desenvolvimento WordPress utilizando Docker, c
 - `src/conf/`: Contém arquivos de configuração, como php.ini com configurações otimizadas.
 - `src/database/`: Armazena os dados persistentes do MySQL.
 - `src/database/dump/`: Diretório específico para arquivos de backup do banco de dados.
-- `src/docker/`: Contém o Dockerfile e docker-compose.yml.
-- `src/logs/`: Armazena todos os logs gerados pela aplicação.
-- `src/wordpress/`: Contém os arquivos core do WordPress.
-
-## Comandos Make Disponíveis
-
-O projeto inclui diversos comandos make para facilitar o desenvolvimento:
-
-- `make up`: Inicia os containers Docker
-- `make down`: Encerra os containers Docker
-- `make shell`: Acessa o terminal do container WordPress
-- `make import-db`: Importa um arquivo dump.sql localizado em src/database/dump/
-- `make export-db`: Exporta o banco atual para src/database/dump/dump.sql
-
-## Portas e Acessos
-
-- WordPress: http://localhost:8080
-- phpMyAdmin: http://localhost:8081
-- MySQL: localhost:3306
-
-## Recursos Instalados
-
-O ambiente inclui:
-- WordPress (última versão)
-- PHP com extensões recomendadas
-- Composer
-- Node.js (via NVM)
-- Yarn
-- Corepack
-
-## Considerações de Uso
-
-- Os temas padrão do WordPress são ignorados no controle de versão
-- Configurações do PHP podem ser ajustadas em src/conf/php.ini
-- Logs são automaticamente direcionados para src/logs/
-- Os dados do banco são persistentes em src/database/dump/`: Diretório específico para arquivos de backup do banco de dados.
 - `src/docker/`: Contém o Dockerfile e docker-compose.yml.
 - `src/logs/`: Armazena todos os logs gerados pela aplicação.
 - `src/wordpress/`: Contém os arquivos core do WordPress.
