@@ -1,3 +1,4 @@
+# ./src/docker/Dockerfile
 FROM wordpress:latest
 
 # Instalar dependências necessárias
@@ -6,13 +7,13 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libwebp-dev \
     libzip-dev \
+    libonig-dev \
+    libxml2-dev \
     unzip \
     git \
     curl \
     nodejs \
-    npm \
-    libonig-dev \
-    libxml2-dev
+    npm
 
 # Instalar extensões PHP recomendadas
 RUN docker-php-ext-install \
@@ -45,14 +46,22 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $NODE_VERSION && \
     nvm use default
 
-# Instalar Node e gerenciadores de pacotes
+# Remover instalações existentes do Yarn
 RUN rm -rf /usr/local/bin/yarn /usr/local/bin/yarnpkg && \
-    npm uninstall -g yarn && \
-    npm install -g yarn@latest && \
+    npm uninstall -g yarn
+
+# Instalar Yarn e Corepack
+RUN npm install -g yarn@latest && \
     npm install -g corepack && \
     corepack enable && \
     corepack prepare yarn@stable --activate && \
     yarn --version || true
+
+# Instalar WP-CLI
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp && \
+    wp --info
 
 # Configurar permissões
 RUN chown -R www-data:www-data /var/www/html && \
