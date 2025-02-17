@@ -1,7 +1,7 @@
 # Makefile
 
 # Variáveis
-DOCKER_COMPOSE = cd src/docker && docker-compose
+DOCKER_COMPOSE = cd src/docker && docker compose
 CONTAINER_WP = wp_app
 CONTAINER_DB = wp_mysql
 DUMP_DIR = src/backup
