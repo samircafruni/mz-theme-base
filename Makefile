@@ -4,9 +4,9 @@
 DOCKER_COMPOSE = cd src/docker && docker-compose
 CONTAINER_WP = wp_app
 CONTAINER_DB = wp_mysql
-DUMP_DIR = src/database/dump
-MYSQL_USER = wordpress
-MYSQL_PASS = wordpress_password
+DUMP_DIR = src/backup
+MYSQL_USER = root
+MYSQL_PASS = root
 MYSQL_DB = wordpress
 
 # Cores para output

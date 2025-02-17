@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     nodejs \
-    npm
+    npm \
+    libonig-dev \
+    libxml2-dev
 
 # Instalar extensões PHP recomendadas
 RUN docker-php-ext-install \
@@ -43,10 +45,14 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $NODE_VERSION && \
     nvm use default
 
-# Instalar Yarn e Corepack
-RUN npm install -g yarn && \
+# Instalar Node e gerenciadores de pacotes
+RUN rm -rf /usr/local/bin/yarn /usr/local/bin/yarnpkg && \
+    npm uninstall -g yarn && \
+    npm install -g yarn@latest && \
     npm install -g corepack && \
-    corepack enable
+    corepack enable && \
+    corepack prepare yarn@stable --activate && \
+    yarn --version || true
 
 # Configurar permissões
 RUN chown -R www-data:www-data /var/www/html && \
