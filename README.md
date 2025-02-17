@@ -38,8 +38,8 @@ O projeto inclui diversos comandos make para facilitar o desenvolvimento:
 - `make up`: Inicia os containers Docker
 - `make down`: Encerra os containers Docker
 - `make shell`: Acessa o terminal do container WordPress
-- `make import-db`: Importa um arquivo dump.sql localizado em src/database/dump/
-- `make export-db`: Exporta o banco atual para src/database/dump/dump.sql
+- `make import`: Importa um arquivo dump.sql localizado em src/database/dump/
+- `make export`: Exporta o banco atual para src/database/dump/dump.sql
 
 ## Acessos
 
